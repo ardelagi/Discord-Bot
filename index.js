@@ -210,3 +210,17 @@ client.on(Events.InteractionCreate, async (interaction) => {
     }
   }
 });
+
+const getMonitoringEmbed = require('./src/functions/monitoring');
+const channelId = "1097660358476439664"; // Ganti ini
+
+client.once('ready', () => {
+  console.log(`${client.user.tag} is ready.`);
+
+  // Kirim embed monitoring setiap 5 menit
+  setInterval(() => {
+    const embed = getMonitoringEmbed(client);
+    const channel = client.channels.cache.get(channelId);
+    if (channel) channel.send({ embeds: [embed] });
+  }, 5 * 60 * 1000); // 5 menit
+});
