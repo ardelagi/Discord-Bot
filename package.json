@@ -1,15 +1,15 @@
 {
-  "name": "nodejs",
+  "name": "share-botghost",
   "version": "1.0.0",
-  "description": "",
+  "description": "Semacam addon buat botghost",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm install && node . "
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/node": "^22.13.11"
+    "discord.js": "^14.14.1"
   }
 }
